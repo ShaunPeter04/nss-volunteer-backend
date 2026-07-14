@@ -19,6 +19,12 @@ app.post("/add-vol", async (req, res) => {
     res.json({ "status": "success" })
 })
 
+app.post("/view-teams", async (req, res) => {
+
+    const teams = await Team.find()
+    res.json(teams)
+})
+
 app.listen(3000, () => {
 
     console.log("server started")
